@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Suzuki Ateliê</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #FFF8DC; /* amarelo pastel */
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Círculos decorativos nos cantos */
+    .decorativo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #FADADD;
+      border: 10px solid #f3e6e6;
+      border-radius: 50%;
+      border-image: repeating-linear-gradient(45deg, #f3e6e6 0 10px, #fff 10px 20px) 10;
+      z-index: 0;
+    }
+
+    .topo-esquerdo { top: 20px; left: 20px; }
+    .topo-direito { top: 20px; right: 20px; }
+    .fundo-esquerdo { bottom: 20px; left: 20px; }
+    .fundo-direito { bottom: 20px; right: 20px; }
+
+    header {
+      text-align: center;
+      margin-top: 60px;
+      z-index: 1;
+      position: relative;
+    }
+
+    header img {
+      width: 250px;
+      border-radius: 50%;
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      background-color: #FADADD;
+      padding: 10px 20px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f3c6d1;
+    }
+
+    .descricao {
+      background-color: white;
+      padding: 40px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    .quadro {
+      background-color: #FADADD;
+      margin: 0 auto;
+      width: 80%;
+      padding: 30px;
+      border-radius: 20px;
+      font-size: 18px;
+      color: #5c3a3a;
+      line-height: 1.6;
+      text-align: center;
+
+      /* Bordas rendadas simuladas */
+      border: 20px solid transparent;
+      border-image: repeating-linear-gradient(135deg, #f3e6e6 0 10px, #fff 10px 20px) 30;
+      border-image-slice: 1;
+    }
+
+    .botao-cardapio {
+      display: block;
+      margin: 30px auto;
+      background-color: #FFF8DC;
+      color: #5c3a3a;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+
+    .botao-cardapio:hover {
+      background-color: #fcebbf;
+    }
+
+    footer {
+  background-color: #FFF8DC; /* amarelo pastel */
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #5c3a3a;
+  border-top: 2px solid #f3e6e6;
+  margin-top: 60px;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Círculos decorativos nos cantos -->
+  <div class="decorativo topo-esquerdo"></div>
+  <div class="decorativo topo-direito"></div>
+  <div class="decorativo fundo-esquerdo"></div>
+  <div class="decorativo fundo-direito"></div>
+
+  <!-- Logo central -->
+  <header>
+    <img src="logo.png" alt="Logo Suzuki Ateliê">
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Contato</a>
+    <a href="cardapio.html">Cardápio</a>
+  </nav>
+
+  <!-- Descrição da cafeteria -->
+  <section class="descricao">
+    <div class="quadro">
+      Bem-vindo ao <strong>Suzuki Ateliê</strong>, uma cafeteria onde o charme vintage encontra o aroma acolhedor do café artesanal. Cada detalhe foi pensado para criar uma experiência única — desde a porcelana florida até os sabores delicados do nosso cardápio. Sinta-se em casa, aprecie com calma e deixe-se envolver pela atmosfera nostálgica.
+    </div>
+
+    <button class="botao-cardapio" onclick="window.location.href='cardapio.html'">Ver Cardápio</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Suzuki Ateliê • Curitiba, PR • contato@suzukiatelie.com.br
+  </footer>
+  
+</body>
+</html>

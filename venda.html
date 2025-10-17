@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendas | Suzuki Ateliê</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #FFF8DC;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .decorativo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #FADADD;
+      border: 10px solid #f3e6e6;
+      border-radius: 50%;
+      border-image: repeating-linear-gradient(45deg, #f3e6e6 0 10px, #fff 10px 20px) 10;
+      z-index: 0;
+    }
+
+    .topo-esquerdo { top: 20px; left: 20px; }
+    .topo-direito { top: 20px; right: 20px; }
+    .fundo-esquerdo { bottom: 20px; left: 20px; }
+    .fundo-direito { bottom: 20px; right: 20px; }
+
+    header {
+      text-align: center;
+      margin-top: 60px;
+      z-index: 1;
+      position: relative;
+    }
+
+    header img {
+      width: 250px;
+      border-radius: 50%;
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      background-color: #FADADD;
+      padding: 10px 20px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f3c6d1;
+    }
+
+    .conteudo {
+      background-color: white;
+      padding: 40px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    .quadro {
+      background-color: #FADADD;
+      margin: 0 auto 40px;
+      width: 80%;
+      padding: 30px;
+      border-radius: 20px;
+      font-size: 18px;
+      color: #5c3a3a;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    form {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #FADADD;
+      padding: 30px;
+      border-radius: 20px;
+      color: #5c3a3a;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .botoes {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .botao-enviar {
+      background-color: #FADADD;
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-right: 20px;
+      transition: background 0.3s;
+    }
+
+    .botao-enviar:hover {
+      background-color: #f3c6d1;
+    }
+
+    .botao-whats {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    footer {
+      background-color: #FFF8DC;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #5c3a3a;
+      border-top: 2px solid #f3e6e6;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Círculos decorativos -->
+  <div class="decorativo topo-esquerdo"></div>
+  <div class="decorativo topo-direito"></div>
+  <div class="decorativo fundo-esquerdo"></div>
+  <div class="decorativo fundo-direito"></div>
+
+  <!-- Logo -->
+  <header>
+    <img src="logo.png" alt="Logo Suzuki Ateliê">
+  </header>
+
+  <!-- Menu -->
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Contato</a>
+    <a href="cardapio.html">Cardápio</a>
+  </nav>
+
+  <!-- Introdução -->
+  <section class="conteudo">
+    <div class="quadro">
+      Faça seu pedido com carinho! Preencha o formulário abaixo e envie diretamente para nossa equipe. Também estamos disponíveis pelo WhatsApp para atendimento rápido.
+    </div>
+
+    <!-- Formulário de pedidos -->
+    <form action="#" method="post">
+      <label for="nome">Seu nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="item">Item do cardápio:</label>
+      <select id="item" name="item" required>
+        <option value="">Selecione</option>
+        <option value="Café Latte">Café Latte</option>
+        <option value="Chá de Hibisco">Chá de Hibisco</option>
+        <option value="Torta de Frutas">Torta de Frutas</option>
+        <option value="Bolo Red Velvet">Bolo Red Velvet</option>
+        <option value="Quiche de Alho Poró">Quiche de Alho Poró</option>
+        <option value="Croissant de Queijo">Croissant de Queijo</option>
+      </select>
+
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" name="quantidade" min="1" required>
+
+      <label for="obs">Observações:</label>
+      <textarea id="obs" name="obs" rows="4" placeholder="Ex: sem açúcar, entrega às 15h..."></textarea>
+
+      <div class="botoes">
+        <button type="submit" class="botao-enviar">Enviar Pedido</button>
+        <a class="botao-whats" href="https://wa.me/5599988888888?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20do%20Suzuki%20Ateliê." target="_blank">WhatsApp</a>
+      </div>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    &copy; 2025 Suzuki Ateliê • Curitiba, PR • contato@suzukiatelie.com.br
+  </footer>
+
+</body>
+</html>

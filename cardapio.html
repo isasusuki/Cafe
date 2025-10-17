@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardápio | Suzuki Ateliê</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #FFF8DC; /* amarelo pastel */
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Círculos decorativos nos cantos */
+    .decorativo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #FADADD;
+      border: 10px solid #f3e6e6;
+      border-radius: 50%;
+      border-image: repeating-linear-gradient(45deg, #f3e6e6 0 10px, #fff 10px 20px) 10;
+      z-index: 0;
+    }
+
+    .topo-esquerdo { top: 20px; left: 20px; }
+    .topo-direito { top: 20px; right: 20px; }
+    .fundo-esquerdo { bottom: 20px; left: 20px; }
+    .fundo-direito { bottom: 20px; right: 20px; }
+
+    header {
+      text-align: center;
+      margin-top: 60px;
+      z-index: 1;
+      position: relative;
+    }
+
+    header img {
+      width: 250px;
+      border-radius: 50%;
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      background-color: #FADADD;
+      padding: 10px 20px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f3c6d1;
+    }
+
+    .secao {
+      margin: 40px auto;
+      width: 90%;
+      padding: 20px;
+      background-color: white;
+      border: 20px solid transparent;
+      border-image: repeating-linear-gradient(135deg, #f3e6e6 0 10px, #fff 10px 20px) 30;
+      border-image-slice: 1;
+      border-radius: 20px;
+    }
+
+    .secao h2 {
+      text-align: center;
+      color: #5c3a3a;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .linha-cardapio {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item {
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .item img:hover {
+      transform: scale(1.05);
+    }
+
+    .item p {
+      margin: 10px 0 0;
+      color: #5c3a3a;
+      font-size: 16px;
+    }
+
+    footer {
+      background-color: #FFF8DC;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #5c3a3a;
+      border-top: 2px solid #f3e6e6;
+      margin-top: 60px;
+    }
+
+    /* Modal de imagem ampliada */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }  
+
+    .item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.botao-comprar {
+  background-color: #FADADD; /* rosa pastel */
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+.botao-comprar:hover {
+  background-color: #f3c6d1;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Círculos decorativos -->
+  <div class="decorativo topo-esquerdo"></div>
+  <div class="decorativo topo-direito"></div>
+  <div class="decorativo fundo-esquerdo"></div>
+  <div class="decorativo fundo-direito"></div>
+
+  <!-- Logo -->
+  <header>
+    <img src="logo.png" alt="Logo Suzuki Ateliê">
+  </header>
+
+  <!-- Menu -->
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Contato</a>
+    <a href="cardapio.html">Cardápio</a>
+  </nav>
+
+  <!-- Seção Bebidas -->
+  <section class="secao">
+    <h2>Bebidas</h2>
+    <div class="linha-cardapio">
+      <div class="item" onclick="abrirModal('bebida1.jpg')">
+        <img src="cafe latte.jpg" alt="Café Latte">
+        <p>Café Latte - R$12,00</p>
+      </div>
+      <div class="item" onclick="abrirModal('bebida2.jpg')">
+        <img src="cha de hibisco.jpg" alt="Chá de Hibisco">
+        <p>Chá de Hibisco - R$10,00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Doces -->
+  <section class="secao">
+    <h2>Doces</h2>
+    <div class="linha-cardapio">
+      <div class="item" onclick="abrirModal('doce1.jpg')">
+        <img src="torta de frutas.jpg" alt="Torta de Frutas">
+        <p>Torta de Frutas - R$15,00</p>
+      </div>
+      <div class="item" onclick="abrirModal('doce2.jpg')">
+        <img src="red velvet.jpg" alt="Bolo Red Velvet">
+        <p>Bolo Red Velvet - R$14,00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Salgados -->
+  <section class="secao">
+    <h2>Salgados</h2>
+    <div class="linha-cardapio">
+      <div class="item" onclick="abrirModal('salgado1.jpg')">
+        <img src="quiche.jpg" alt="Quiche de Alho Poró">
+        <p>Quiche de Alho Poró - R$16,00</p>
+      </div>
+      <div class="item" onclick="abrirModal('salgado2.jpg')">
+        <img src="croissaint.jpg" alt="Croissant de Queijo">
+        <p>Croissant de Queijo - R$13,00</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <a href="venda.html" class="botao-comprar">Comprar</a>
+  </div>
+  
+  
+  <!-- Rodapé -->
+  <footer>
+    &copy; 2025 Suzuki Ateliê • Curitiba, PR • contato@suzukiatelie.com.br
+  </footer>
+
+</body>
+</html>
